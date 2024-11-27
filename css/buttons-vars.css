@@ -1,0 +1,48 @@
+:root {
+	--p-button-horizontal-padding: 1em;
+	--p-button-height: 2.5em;
+
+	--p-button-color: var(--p-color-invert);
+	--p-button-border: none;
+	--p-button-background: var(--p-accent-color-500);
+
+	--p-button-hover-color: var(--p-color-invert);
+	--p-button-hover-background: var(--p-accent-color-700);
+
+	--p-button-focus-outline: 3px solid var(--p-accent-color-200);
+	--p-button-active-opacity: .75;
+
+	--p-button-font-family: var(--p-font-family);
+	--p-button-font-size: var(--p-font-size);
+	--p-button-text-transform: none;
+	--p-button-font-weight: 400;
+
+	--p-button-outlined-color: var(--p-accent-color-500);
+	--p-button-outlined-border: 1px solid var(--p-accent-color-500);
+	--p-button-outlined-hover-background: var(--p-accent-color-500);
+	--p-button-outlined-hover-color: var(--p-color-invert);
+
+	--p-button-subtle-color: var(--p-accent-color-500);
+	--p-button-subtle-background: var(--p-accent-color-50);
+	--p-button-subtle-hover-background: var(--p-accent-color-100);
+
+	--p-button-text-only-color: var(--p-accent-color-500);
+	--p-button-text-only-hover-background: var(--p-accent-color-50);
+
+	--p-button-transparent-hover-background: #eee;
+	--p-button-transparent-hover-color: auto;
+	--p-button-round-horizontal-padding: 1em;
+
+	--p-button-icon-size: 1em;
+	--p-button-icon-gap: .5em;
+
+	--p-button-font-size-mini: var(--p-size-mini);
+	--p-button-font-size-small: var(--p-size-small);
+	--p-button-font-size-large: var(--p-size-large);
+	--p-button-font-size-huge: var(--p-size-huge);
+
+	--p-button-cursor: pointer;
+	--p-button-disabled-opacity: .6;
+	--p-button-disabled-cursor: not-allowed;
+	--p-button-box-shadow: none;
+}

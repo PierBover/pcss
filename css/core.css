@@ -1,0 +1,60 @@
+:root {
+
+	/* https://uicolors.app/create */
+	--p-accent-color-50: #ecf3ff;
+	--p-accent-color-100: #dde9ff;
+	--p-accent-color-200: #c2d5ff;
+	--p-accent-color-300: #9db9ff;
+	--p-accent-color-400: #7691ff;
+	--p-accent-color-500: #566bfe;
+	--p-accent-color-600: #3740f4;
+	--p-accent-color-700: #2b30d7;
+	--p-accent-color-800: #252aae;
+	--p-accent-color-900: #262c89;
+	--p-accent-color-950: #171a4f;
+
+	--p-text-color-50: #f7f7f8;
+	--p-text-color-100: #eeeef0;
+	--p-text-color-200: #d8d8df;
+	--p-text-color-300: #b6b7c3;
+	--p-text-color-400: #8f90a1;
+	--p-text-color-500: #717186;
+	--p-text-color-600: #5b5c6e;
+	--p-text-color-700: #4a4a5a;
+	--p-text-color-800: #454552;
+	--p-text-color-900: #393842;
+	--p-text-color-950: #26252c;
+
+	--p-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	--p-font-size: 1rem;
+	--p-line-height: 1;
+
+	--p-color: var(--p-text-color-700);
+	--p-color-invert: white;
+	--p-color-titles: var(--p-text-color-950);
+	--p-color-strong: var(--p-text-color-950);
+
+	--p-link-color: var(--p-accent-color-500);
+	--p-link-color-hover: var(--p-accent-color-900);
+	--p-link-color-visited: rebeccapurple;
+	--p-link-font-weight: 500;
+
+	--p-border-radius: .3em;
+	--p-transition: background .25s, opacity .15s, color .25s, border-color .25s;
+	--p-outline-width: 3px;
+	--p-focus-outline: var(--p-outline-width) solid var(--p-accent-color-200);
+
+	--p-code-color: var(--p-text-color-900);
+	--p-code-background: var(--p-text-color-50);
+	--p-code-block-padding: 1em;
+	--p-code-border-radius: var(--p-border-radius);
+
+	--p-mark-background: var(--p-accent-color-100);
+
+	--p-size-mini: .7em;
+	--p-size-small: .8em;
+	--p-size-large: 1.15em;
+	--p-size-huge: 1.3em;
+
+	/*--p-spinner: $cnv-spinner;*/
+}

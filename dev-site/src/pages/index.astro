@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Dropdown  from '../components/Dropdown.astro';
+import Turbo  from '../components/Turbo.astro';
+
+const tintValues = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+const sizes = ['mini', 'small', '', 'large', 'huge'];
+---
+
+<style>
+	section {
+		margin-bottom: 4rem;
+	}
+
+	.swatches {
+		display: flex;
+	}
+
+	.swatch {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		width: 4rem;
+		height: 4rem;
+		margin-right: .25rem;
+	}
+
+	.button-row {
+		display: flex;
+		align-items: center;
+		gap: .5rem;
+		margin-bottom: 2rem;
+	}
+
+	.button-row button {
+		flex-shrink: 0;
+	}
+</style>
+
+<BaseLayout>
+
+	<h1>P CSS</h1>
+
+	<section>
+		<h2>Colors</h2>
+		<h3>Accent tints</h3>
+		<div class="swatches">
+			{
+				tintValues.map((tint) => (
+					<div class="swatch" style={{backgroundColor:`var(--p-accent-color-${tint})`}}>{tint}</div>
+				))
+			}
+		</div>
+		<h3>Text color tints</h3>
+		<div class="swatches">
+			{
+				tintValues.map((tint) => (
+					<div class="swatch" style={{backgroundColor:`var(--p-text-color-${tint})`}}>{tint}</div>
+				))
+			}
+		</div>
+	</section>
+
+	<section>
+		<h2>Buttons</h2>
+
+		<h3>Sizes</h3>
+		<div class="button-row">
+			{
+				sizes.map((size) => (
+					<button class={size}>Button {size || 'normal'}</button>
+				))
+			}
+		</div>
+
+		<h3>Variants</h3>
+		<div class="button-row">
+			<button>Normal button</button>
+			<button disabled>Disabled button</button>
+			<button class="pill">Pill button</button>
+			<button class="outlined">Outlined button</button>
+			<button class="subtle">Subtle button</button>
+			<button class="text-only">Text only button</button>
+		</div>
+
+		<h3>With icons</h3>
+
+		<div class="button-row">
+			<div class="button-row">
+				{
+					sizes.map((size) => (
+						<button class={size}>Button {size || 'normal'}<Dropdown/></button>
+					))
+				}
+			</div>
+		</div>
+		<div class="button-row">
+			<div class="button-row">
+				{
+					sizes.map((size) => (
+						<button class={size}><Turbo/>Button {size || 'normal'}</button>
+					))
+				}
+			</div>
+		</div>
+		<div class="button-row">
+			{
+				sizes.map((size) => (
+					<button class={size}><Turbo/>Button {size || 'normal'}<Dropdown/></button>
+				))
+			}
+		</div>
+		<div class="button-row">
+			<button><Turbo/> Button text</button>
+			<button disabled><Turbo/> Button text</button>
+			<button class="pill"><Turbo/> Button text</button>
+			<button class="outlined"><Turbo/> Button text</button>
+			<button class="subtle"><Turbo/> Button text</button>
+			<button class="text-only"><Turbo/> Button text</button>
+		</div>
+
+		<h3>Full width</h3>
+
+		<div class="button-row" style="width: 20rem;">
+			<button class="full-width">Button text</button>
+		</div>
+		<div class="button-row" style="width: 20rem;">
+			<button class="full-width">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="icon" fill="currentColor">
+					<path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+				</svg>
+				Button text
+			</button>
+		</div>
+		<div class="button-row" style="width: 20rem;">
+			<button class="full-width">
+				Button text
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="icon mla" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+				</svg>
+			</button>
+		</div>
+
+		<h3>Square button with icon</h3>
+
+		<div class="button-row">
+			<button class="square"><Turbo/></button>
+			<button disabled class="square"><Turbo/></button>
+			<button class="outlined square"><Turbo/></button>
+			<button class="subtle square"><Turbo/></button>
+			<button class="text-only square"><Turbo/></button>
+		</div>
+
+		<h3>Circle button with icon</h3>
+
+		<div class="button-row">
+			<button class="circle"><Turbo/></button>
+			<button disabled class="circle"><Turbo/></button>
+			<button class="outlined circle"><Turbo/></button>
+			<button class="subtle circle"><Turbo/></button>
+			<button class="text-only circle"><Turbo/></button>
+		</div>
+
+		<h3>Loading</h3>
+
+		<div class="button-row">
+			<button class="loading mini">Lorem ipsum</button>
+			<button class="loading small">Lorem ipsum</button>
+			<button class="loading">Lorem ipsum</button>
+			<button class="loading large">Lorem ipsum</button>
+			<button class="loading huge">Lorem ipsum</button>
+		</div>
+
+		<h3>Loading custom icon</h3>
+
+		<div class="button-row">
+			<button class="loading-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="icon glow" fill="white">
+					<path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+				</svg>
+				Lorem ipsum dolor
+			</button>
+		</div>
+	</section>
+
+	<section>
+		<h2>Forms</h2>
+		<!--<form class="use-pseudo">
+			<input type="text"  value="Lorem ipsum" required>
+			<input type="text"  value="" required>
+		</form>-->
+
+		<br><br><br>
+
+		<form style="width: 30rem;margin: 0 auto 4rem;">
+			<div class="form-row">
+				<div class="form-control">
+					<label>
+						Name
+						<div class="info">Lorem ipsum</div>
+					</label>
+					<input type="text" name="nasdfsdfme" >
+					<div class="info">Use your real name</div>
+				</div>
+				<div class="form-control">
+					<label>Last name</label>
+					<input type="text" name="last-nsdfsfame" class="valid" value="Pepito" disabled>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-control">
+					<label>Email address</label>
+					<input type="email" name="emsdfsdfail" class="cnv invalid" required>
+					<div class="info invalid">Please write a valid email</div>
+				</div>
+			</div>
+			<div class="form-control">
+				<label>Some select</label>
+				<select>
+					<option value="">Lorem ipsum</option>
+					<option value="">Suspendisse potenti</option>
+					<option value="">Maecenas porttitor diam</option>
+					<option value="" selected>Curabitur vel lacus eget erat tincidunt fringilla nec in ante. Pellentesque lacinia tellus</option>
+					<option value="">Lorem ipsum</option>
+				</select>
+			</div>
+			<fieldset>
+				<legend>Some checkboxes</legend>
+				<div class="form-control checkbox">
+					<input type="checkbox" id="checkbox_1" checked>
+					<label for="checkbox_1">Lorem ipsum</label>
+				</div>
+				<div class="form-control checkbox">
+					<input type="checkbox" id="checkbox_2">
+					<label for="checkbox_2">Lorem ipsum</label>
+				</div>
+				<div class="form-control checkbox">
+					<input type="checkbox" id="checkbox_3">
+					<label for="checkbox_3">Lorem ipsum</label>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Some radio buttons</legend>
+				<div class="form-control radio">
+					<input type="radio" name="test_radio" id="radio_1" checked>
+					<label for="radio_1">Lorem Lorem ipsum</label>
+				</div>
+				<div class="form-control radio">
+					<input type="radio" name="test_radio" id="radio_2">
+					<label for="radio_2">Lorem Lorem ipsum</label>
+				</div>
+				<div class="form-control radio">
+					<input type="radio" name="test_radio" id="radio_3">
+					<label for="radio_3">Lorem Lorem ipsum</label>
+				</div>
+			</fieldset>
+
+			<button>Submit</button>
+		</form>
+
+		<form style="width: 30rem;margin: 0 auto;">
+			<div class="form-row">
+				<div class="form-control">
+					<label for="name">
+						Name
+					</label>
+					<input type="text" name="sdfsdf" >
+				</div>
+				<div class="form-control">
+					<label for="last-name">Last name</label>
+					<input type="text" name="sdfsdfsd" class="cnv valid" value="Pepito">
+				</div>
+				<div class="form-control">
+					<button>Submit</button>
+				</div>
+			</div>
+		</form>
+		<form style="width: 30rem;margin: 0 auto;">
+			<div class="form-row">
+				<input type="text" name="namesdfs" >
+				<input type="text" name="lastsdfsdf-name" class="cnv valid" value="Pepito">
+				<button>Submit</button>
+			</div>
+		</form>
+	</section>
+
+	<section>
+		<h2>Text stuff</h2>
+		<h1>H1 Lorem ipsum dolor sit amet <code>vel lacus eget erat</code></h1>
+		<h2>H2 Lorem ipsum dolor sit amet</h2>
+		<h3>H3 Lorem ipsum dolor sit amet</h3>
+		<h4>H4 Lorem ipsum dolor sit amet</h4>
+		<h5>H5 Lorem ipsum dolor sit amet</h5>
+		<p>Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Maecenas <a href="pepito">porttitor diam cursus ligula</a> tristique bibendum. Aliquam at erat quis tellus adipiscing tempus. Cras sed rutrum velit. Curabitur <code>vel lacus eget erat</code> tincidunt fringilla nec in ante. Pellentesque lacinia tellus nec neque tempus fermentum. Pellentesque ligula arcu, auctor at sagittis id, imperdiet eget tortor. Pellentesque imperdiet tempus risus non condimentum. Phasellus ut venenatis turpis. Fusce tincidunt nulla sit amet elit lacinia id consequat eros lacinia. Phasellus ut justo velit. Aenean dignissim, nunc vitae molestie blandit, mi diam vehicula ligula, nec vehicula velit sem eu urna. Suspendisse potenti.</p>
+		<p>
+			<a href="https://mydomain.com">Unvisited link</a><br>
+			<a href="#">Visited link</a><br>
+			<a href="https://mydomain.com">Unvisited link</a><br>
+			<a href="https://mydomain.com">Link with some <code>code</code></a>
+		</p>
+		<br>
+		<ul>
+			<li>Lorem ipsum dolor sit</li>
+			<li>Lorem consectetur adipiscing elit</li>
+			<li>Maecenas porttitor diam</li>
+			<li>Lorem ipsum dolor sit</li>
+			<li>Lorem consectetur adipiscing elit</li>
+			<li>Maecenas porttitor diam</li>
+		</ul>
+		<br>
+		<ol>
+			<li>Lorem ipsum dolor sit</li>
+			<li>Lorem consectetur adipiscing elit</li>
+			<li>Maecenas porttitor diam</li>
+			<li>Lorem ipsum dolor sit</li>
+			<li>Lorem consectetur adipiscing elit</li>
+			<li>Maecenas porttitor diam</li>
+		</ol>
+		<br>
+		<pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;&lt;p&gt;And another line of sample text here...&lt;/p&gt;</code></pre>
+		<br>
+		<p>For example, <code>&lt;section&gt;</code> should be wrapped as inline.</p>
+		<p>You can use the mark tag to <mark>highlight</mark> text.</p>
+		<p><del>This line of text is meant to be treated as deleted text.</del></p>
+		<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+		<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+		<p><u>This line of text will render as underlined.</u></p>
+		<p><small>This line of text is meant to be treated as fine print.</small></p>
+		<p><strong>This line rendered as bold text.</strong></p>
+		<p><em>This line rendered as italicized text.</em></p>
+	</section>
+
+</BaseLayout>

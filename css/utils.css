@@ -1,0 +1,31 @@
+.mla {
+	margin-left: auto;
+}
+
+.mra {
+	margin-right: auto;
+}
+
+.block-mouse {
+	pointer-events: none;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.center-parent {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.fill-parent {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}

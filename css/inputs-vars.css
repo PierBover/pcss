@@ -1,0 +1,42 @@
+:root {
+	--p-input-horizontal-padding: .6em;
+	--p-input-height: 2.5em;
+
+	--p-input-color: var(--p-text-color-700);
+	--p-input-color-disabled: var(--p-text-color-500);
+	--p-input-font-family: var(--p-font-family);
+	--p-input-font-size: var(--p-elements-font-size);
+	--p-input-text-transform: none;
+	--p-input-font-weight: 400;
+
+	--p-input-font-size-mini: var(--p-size-mini);
+	--p-input-font-size-small: var(--p-size-small);
+	--p-input-font-size-large: var(--p-size-large);
+	--p-input-font-size-huge: var(--p-size-huge);
+
+	--p-input-border: 1px solid var(--p-text-color-300);
+	--p-input-background: var(--p-color-invert);
+	--p-input-focus-border: 1px solid var(--p-accent-color-500);
+
+	--p-input-disabled-opacity: .6;
+	--p-input-disabled-cursor: not-allowed;
+	--p-input-disabled-background: var(--p-text-color-50);
+
+	--p-input-read-only-cursor: not-allowed;
+	--p-input-read-only-color: var(--p-text-color-500);
+	--p-input-read-only-background: var(--p-color-invert);
+
+	--p-input-valid-background: var(--p-color-success-50);
+	--p-input-valid-color: var(--p-color-success-500);
+	--p-input-valid-border: 1px solid var(--p-color-success-500);
+	--p-input-valid-focus-outline: none;
+	--p-input-valid-focus-border: 1px solid var(--p-color-success-500);
+
+	--p-input-invalid-background: var(--p-color-danger-50);
+	--p-input-invalid-color: var(--p-color-danger-500);
+	--p-input-invalid-border: 1px solid var(--p-color-danger-500);
+	--p-input-invalid-focus-outline: none;
+	--p-input-invalid-focus-border: 1px solid var(--p-color-danger-500);
+
+	--p-input-box-shadow: none;
+}

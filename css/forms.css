@@ -1,0 +1,83 @@
+@import './forms-vars.css';
+
+.p .form-row {
+	display: flex;
+	align-items: start;
+	margin-bottom: 1.5em;
+	gap: .5em;
+}
+
+.p .form-control {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	label {
+		margin-bottom: .5em;
+		display: flex;
+		align-items: center;
+		font-size: .9rem;
+
+		.info {
+			margin-top: 0;
+			margin-left: auto;
+		}
+	}
+
+	> input {
+		/*width: 100%;*/
+	}
+
+	.info {
+		color: var(--p-text-color-400);
+		margin-top: .5em;
+		font-size: .8rem;
+		line-height: 1;
+
+		/*&.valid {
+			color: var(--cnv-color-success-400);
+		}
+
+		&.invalid {
+			color: var(--cnv-color-danger-400);
+		}*/
+	}
+
+	> button {
+		margin-top: 1.4em;
+	}
+
+	&.checkbox, &.radio {
+		margin-bottom: 1em;
+		flex-direction: row;
+		display: flex;
+		align-items: center;
+
+		label {
+			margin-bottom: 0;
+		}
+	}
+
+	&.checkbox input[type=checkbox], &.radio input[type=radio] {
+		margin-right: .5em;
+	}
+}
+
+.p fieldset, fieldset.p {
+	margin-bottom: 2em;
+
+	legend {
+		color: var(--p-color-titles);
+		font-size: 1.25em;
+		margin-bottom: .75em;
+	}
+}
+
+/*label.p, .p label {
+	display: flex;
+	align-items: center;
+
+	input[type="checkbox"], input[type="radio"]{
+		margin-right: .5em;
+	}
+}*/

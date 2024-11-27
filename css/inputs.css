@@ -1,0 +1,154 @@
+@import 'inputs-vars.css';
+
+input[type=text].p, .p input[type=text],
+input[type=email].p, .p input[type=email],
+input[type=password].p, .p input[type=password] {
+	all: unset;
+	box-sizing: border-box;
+
+	color: var(--p-input-color);
+	background: var(--p-input-background);
+	border: var(--p-input-border);
+	outline: none;
+
+	padding: 0 var(--p-input-horizontal-padding);
+	border-radius: var(--p-input-border-radius, var(--p-border-radius));
+	height: var(--p-input-height);
+
+	font-family: var(--p-input-font-family);
+	font-size: var(--p-input-font-size);
+	font-weight: var(--p-input-font-weight);
+	text-transform: var(--p-input-text-transform);
+
+	transition: var(--p-transition);
+
+	&:focus-visible:not(:read-only) {
+		outline: var(--p-focus-outline);
+		border: var(--p-input-focus-border);
+	}
+
+	&:disabled {
+		/*opacity: var(--p-input-disabled-opacity);*/
+		color: var(--p-input-color-disabled);
+		cursor: var(--p-input-disabled-cursor);
+		background: var(--p-input-disabled-background);
+	}
+
+	&:read-only:not(:disabled) {
+		color: var(--p-input-read-only-color);
+		cursor: var(--p-input-read-only-cursor);
+	}
+}
+
+/*@each $state in $cnv-validationStates {
+	input.#{$state}, .use-pseudo input:#{$state} {
+		background: var(--p-input-#{$state}-background);
+		color: var(--p-input-#{$state}-color);
+		border: var(--p-input-#{$state}-border);
+
+		&:focus-visible:not(:read-only) {
+			outline: var(--p-input-#{$state}-focus-outline);
+			border: var(--p-input-#{$state}-focus-border);
+		}
+	}
+}*/
+
+input[type="checkbox"].p, .p input[type="checkbox"] {
+	appearance: none;
+	width: 1.25em;
+	height: 1.25em;
+	border: var(--p-input-border);
+	border-radius: var(--p-border-radius);
+	transition: none;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
+
+	&:checked {
+		background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
+		background-color: var(--p-accent-color-500);
+		border: var(--p-input-focus-border);
+	}
+
+	&:focus-visible {
+		outline: var(--p-focus-outline);
+	}
+}
+
+input[type="radio"].p, .p input[type="radio"] {
+	appearance: none;
+	width: 1.25em;
+	height: 1.25em;
+	border: var(--p-input-border);
+	border-radius: 100px;
+	transition: none;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color: white;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+
+	&::before {
+		content: "";
+		width: .5em;
+		height: .5em;
+		border-radius: 50%;
+		transform: scale(0);
+		box-shadow: inset 1em 1em white;
+	}
+
+	&:checked::before {
+		transform: scale(1);
+	}
+
+
+
+	&:checked {
+		background: var(--p-accent-color-500);
+		border: var(--p-input-focus-border);
+	}
+
+	&:focus-visible {
+		outline: var(--p-focus-outline);
+	}
+}
+
+select {
+	all: unset;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	text-wrap: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	color: var(--p-input-color);
+	background: var(--p-input-background);
+	border: var(--p-input-border);
+	outline: none;
+
+	padding: 0 3em 0 var(--p-input-horizontal-padding);
+	border-radius: var(--p-input-border-radius, var(--p-border-radius));
+	height: var(--p-input-height);
+
+	font-family: var(--p-input-font-family);
+	font-size: var(--p-input-font-size);
+	font-weight: var(--p-input-font-weight);
+	text-transform: var(--p-input-text-transform);
+
+	background-repeat: no-repeat;
+	background-position: right 1em center;
+	background-size: auto 35%;
+	background-repeat: no-repeat;
+	background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+
+	&:focus-visible {
+		outline: var(--p-focus-outline);
+		border: var(--p-input-focus-border);
+	}
+
+}
