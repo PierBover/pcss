@@ -1,7 +1,8 @@
 @import 'core.css';
 @import 'global.css';
+@import 'utils.css';
 @import 'animations.css';
-@import 'content.css';
+/*@import 'content.css';*/
 @import 'buttons.css';
 @import 'inputs.css';
 @import 'forms.css';

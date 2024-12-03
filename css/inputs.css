@@ -1,19 +1,18 @@
-@import 'inputs-vars.css';
-
 input[type=text].p, .p input[type=text],
 input[type=email].p, .p input[type=email],
 input[type=password].p, .p input[type=password] {
 	all: unset;
 	box-sizing: border-box;
 
-	color: var(--p-input-color);
-	background: var(--p-input-background);
-	border: var(--p-input-border);
+	color: var(--p-input-color, var(--p-text-color-700));
+	background: var(--p-input-background, transparent);
+	border: var(--p-input-border, 1px solid var(--p-text-color-400));
 	outline: none;
+	box-shadow: var(--p-input-box-shadow, none);
 
-	padding: 0 var(--p-input-horizontal-padding);
+	padding: 0 .6em;
 	border-radius: var(--p-input-border-radius, var(--p-border-radius));
-	height: var(--p-input-height);
+	height: var(--p-input-height, var(--p-element-base-height));
 
 	font-family: var(--p-input-font-family);
 	font-size: var(--p-input-font-size);
@@ -24,40 +23,27 @@ input[type=password].p, .p input[type=password] {
 
 	&:focus-visible:not(:read-only) {
 		outline: var(--p-focus-outline);
-		border: var(--p-input-focus-border);
+		border: var(--p-input-focus-border, 1px solid var(--p-accent-color-500));
 	}
 
 	&:disabled {
-		/*opacity: var(--p-input-disabled-opacity);*/
-		color: var(--p-input-color-disabled);
-		cursor: var(--p-input-disabled-cursor);
-		background: var(--p-input-disabled-background);
+		color: var(--p-input-color-disabled, var(--p-text-color-500));
+		cursor: var(--p-input-disabled-cursor, default);
+		background: var(--p-input-disabled-background, var(--p-text-color-50));
 	}
 
 	&:read-only:not(:disabled) {
 		color: var(--p-input-read-only-color);
+		background: var(--p-input-read-only-background);
 		cursor: var(--p-input-read-only-cursor);
 	}
 }
-
-/*@each $state in $cnv-validationStates {
-	input.#{$state}, .use-pseudo input:#{$state} {
-		background: var(--p-input-#{$state}-background);
-		color: var(--p-input-#{$state}-color);
-		border: var(--p-input-#{$state}-border);
-
-		&:focus-visible:not(:read-only) {
-			outline: var(--p-input-#{$state}-focus-outline);
-			border: var(--p-input-#{$state}-focus-border);
-		}
-	}
-}*/
 
 input[type="checkbox"].p, .p input[type="checkbox"] {
 	appearance: none;
 	width: 1.25em;
 	height: 1.25em;
-	border: var(--p-input-border);
+	border: var(--p-input-border, 1px solid var(--p-text-color-400));
 	border-radius: var(--p-border-radius);
 	transition: none;
 	background-position: center center;
@@ -67,8 +53,8 @@ input[type="checkbox"].p, .p input[type="checkbox"] {
 
 	&:checked {
 		background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
-		background-color: var(--p-accent-color-500);
-		border: var(--p-input-focus-border);
+		background-color: var(--p-input-checkbox-background, var(--p-accent-color-500));
+		border: var(--p-input-focus-border, var(--p-accent-color-500));
 	}
 
 	&:focus-visible {
@@ -80,7 +66,7 @@ input[type="radio"].p, .p input[type="radio"] {
 	appearance: none;
 	width: 1.25em;
 	height: 1.25em;
-	border: var(--p-input-border);
+	border: var(--p-input-border, 1px solid var(--p-text-color-400));
 	border-radius: 100px;
 	transition: none;
 	background-position: center center;
@@ -108,8 +94,8 @@ input[type="radio"].p, .p input[type="radio"] {
 
 
 	&:checked {
-		background: var(--p-accent-color-500);
-		border: var(--p-input-focus-border);
+		background-color: var(--p-input-checkbox-background, var(--p-accent-color-500));
+		border: var(--p-input-focus-border, var(--p-accent-color-500));
 	}
 
 	&:focus-visible {
@@ -126,14 +112,14 @@ select {
 	overflow: hidden;
 	text-overflow: ellipsis;
 
-	color: var(--p-input-color);
-	background: var(--p-input-background);
-	border: var(--p-input-border);
+	color: var(--p-input-color, var(--p-text-color-700));
+	background: var(--p-input-background, transparent);
+	border: var(--p-input-border, 1px solid var(--p-text-color-300));
 	outline: none;
 
-	padding: 0 3em 0 var(--p-input-horizontal-padding);
+	padding: 0 2.5em 0 .6em;
 	border-radius: var(--p-input-border-radius, var(--p-border-radius));
-	height: var(--p-input-height);
+	height: var(--p-input-height, var(--p-element-base-height));
 
 	font-family: var(--p-input-font-family);
 	font-size: var(--p-input-font-size);
@@ -152,3 +138,5 @@ select {
 	}
 
 }
+
+/* TODO all the validation stuff */
